@@ -3,10 +3,10 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#080808">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sultan Alqahtani</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#080808">
+<title>Sultan Alqahtani — CX Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #080808;
@@ -36,11 +36,6 @@ body.ar { font-family:‘Tajawal’,sans-serif; direction:rtl; }
 ::-webkit-scrollbar-track { background:var(–black); }
 ::-webkit-scrollbar-thumb { background:var(–red); }
 
-[data-lang=“en”] { display:block; }
-[data-lang=“ar”] { display:none; }
-body.ar [data-lang=“en”] { display:none; }
-body.ar [data-lang=“ar”] { display:block; }
-
 /* NAV */
 nav {
 position:fixed; top:0; left:0; right:0; z-index:100;
@@ -55,7 +50,7 @@ nav.scrolled { background:rgba(8,8,8,0.95); backdrop-filter:blur(10px); border-b
 font-family:‘Bebas Neue’,sans-serif;
 font-size:22px; letter-spacing:4px; color:var(–white);
 }
-body.ar .nav-logo { font-family:‘Tajawal’,sans-serif; font-weight:800; font-size:18px; letter-spacing:0; }
+
 .nav-logo span { color:var(–red); }
 
 .lang-btn {
@@ -97,7 +92,7 @@ margin-bottom:40px;
 transform:scaleX(0); transform-origin:left;
 animation:ruleIn 1.4s cubic-bezier(0.22,1,0.36,1) forwards 0.2s;
 }
-body.ar .hero-rule { background:linear-gradient(to left, var(–red) 0%, var(–red) 30%, transparent 100%); transform-origin:right; }
+
 @keyframes ruleIn { from{transform:scaleX(0);opacity:0;} to{transform:scaleX(1);opacity:1;} }
 
 .hero-tag {
@@ -105,7 +100,6 @@ font-size:11px; letter-spacing:6px; text-transform:uppercase;
 color:var(–red); margin-bottom:16px; font-weight:500;
 opacity:0; animation:fadeUp 1.1s cubic-bezier(0.22,1,0.36,1) forwards 0.5s;
 }
-body.ar .hero-tag { letter-spacing:2px; font-size:13px; }
 
 .hero-name {
 font-family:‘Bebas Neue’,sans-serif;
@@ -113,11 +107,6 @@ font-size:clamp(100px,18vw,260px);
 line-height:0.85; letter-spacing:2px;
 color:var(–white);
 opacity:0; animation:fadeUp 1.1s cubic-bezier(0.22,1,0.36,1) forwards 0.65s;
-}
-body.ar .hero-name {
-font-family:‘Tajawal’,sans-serif; font-weight:800;
-font-size:clamp(80px,14vw,200px);
-letter-spacing:0; line-height:1;
 }
 
 .hero-bottom {
@@ -131,7 +120,6 @@ flex-wrap:wrap; gap:24px;
 font-size:clamp(13px,1.2vw,16px); color:var(–dim);
 line-height:1.8; max-width:340px; font-weight:300;
 }
-body.ar .hero-desc { font-size:clamp(14px,1.3vw,17px); }
 
 .hero-stats {
 display:flex; gap:48px; flex-wrap:wrap;
@@ -141,13 +129,12 @@ font-family:‘Bebas Neue’,sans-serif;
 font-size:clamp(36px,4vw,56px); color:var(–white);
 line-height:1; letter-spacing:1px;
 }
-body.ar .hstat-num { font-family:‘Tajawal’,sans-serif; font-weight:800; }
+
 .hstat-num span { color:var(–red); }
 .hstat-label {
 font-size:9px; letter-spacing:3px; text-transform:uppercase;
 color:var(–dim); margin-top:4px; font-weight:500;
 }
-body.ar .hstat-label { letter-spacing:0; font-size:11px; }
 
 /* EDGE */
 .edge {
@@ -160,7 +147,6 @@ border-top:1px solid var(–border);
 font-size:10px; letter-spacing:5px; text-transform:uppercase;
 color:var(–red); margin-bottom:48px; font-weight:500;
 }
-body.ar .edge-label { letter-spacing:1px; font-size:12px; }
 
 .edge-question {
 font-family:‘Bebas Neue’,sans-serif;
@@ -169,11 +155,7 @@ line-height:0.95; letter-spacing:1px;
 margin-bottom:80px; max-width:900px;
 color:var(–white);
 }
-body.ar .edge-question {
-font-family:‘Tajawal’,sans-serif; font-weight:800;
-font-size:clamp(36px,5.5vw,80px);
-letter-spacing:0; line-height:1.1;
-}
+
 .edge-question span { color:var(–red); }
 
 .edge-points {
@@ -190,7 +172,7 @@ content:’’; position:absolute; top:0; left:0;
 width:0; height:2px; background:var(–red);
 transition:width 0.6s cubic-bezier(0.22,1,0.36,1);
 }
-body.ar .edge-point::before { left:auto; right:0; }
+
 .edge-point:hover { background:#0f0f0f; }
 .edge-point:hover::before { width:100%; }
 
@@ -199,9 +181,9 @@ font-family:‘Bebas Neue’,sans-serif;
 font-size:48px; color:rgba(245,240,232,0.06);
 line-height:1; margin-bottom:20px;
 }
-body.ar .edge-num { font-family:‘Tajawal’,sans-serif; font-weight:800; }
+
 .edge-text { font-size:14px; line-height:1.8; color:var(–dim); }
-body.ar .edge-text { font-size:15px; }
+
 .edge-text strong { color:var(–white); font-weight:500; }
 
 /* CASES */
@@ -222,22 +204,17 @@ font-size:clamp(60px,8vw,120px);
 color:rgba(245,240,232,0.07); line-height:0.85; letter-spacing:2px;
 padding-top:8px;
 }
-body.ar .case-index { font-family:‘Tajawal’,sans-serif; font-weight:800; }
+
 .case-meta {}
 .case-co {
 font-size:10px; letter-spacing:4px; text-transform:uppercase;
 color:var(–red); margin-bottom:10px; font-weight:500;
 }
-body.ar .case-co { letter-spacing:0; font-size:12px; }
+
 .case-title {
 font-family:‘Bebas Neue’,sans-serif;
 font-size:clamp(28px,3.5vw,52px); letter-spacing:1px;
 color:var(–white); line-height:1;
-}
-body.ar .case-title {
-font-family:‘Tajawal’,sans-serif; font-weight:800;
-letter-spacing:0; line-height:1.2;
-font-size:clamp(24px,3vw,44px);
 }
 
 .case-body {
@@ -256,14 +233,13 @@ font-size:9px; letter-spacing:4px; text-transform:uppercase;
 color:var(–red); font-weight:600; margin-bottom:20px;
 padding-bottom:12px; border-bottom:1px solid var(–border);
 }
-body.ar .col-label { letter-spacing:0; font-size:11px; }
 
 .ctx-item {
 display:flex; gap:12px; margin-bottom:14px;
 font-size:12.5px; line-height:1.75; color:var(–dim);
 align-items:flex-start;
 }
-body.ar .ctx-item { font-size:13.5px; }
+
 .ctx-item:last-child { margin-bottom:0; }
 .ctx-dash { color:var(–red); font-weight:700; flex-shrink:0; margin-top:1px; }
 
@@ -275,9 +251,8 @@ display:flex; gap:12px; align-items:flex-start;
 .int-item:last-child { border-bottom:none; padding-bottom:0; }
 .int-dash { color:var(–red); font-weight:700; flex-shrink:0; font-size:14px; line-height:1.6; }
 .int-body { font-size:12.5px; line-height:1.75; color:var(–dim); }
-body.ar .int-body { font-size:13.5px; }
+
 .int-title { color:var(–white); font-weight:500; display:block; margin-bottom:2px; font-size:12.5px; }
-body.ar .int-title { font-size:13.5px; }
 
 .out-item {
 display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;
@@ -285,7 +260,6 @@ display:flex; gap:12px; margin-bottom:14px; align-items:flex-start;
 .out-item:last-child { margin-bottom:0; }
 .out-dot { width:4px; height:4px; border-radius:50%; background:var(–red); flex-shrink:0; margin-top:7px; }
 .out-text { font-size:12.5px; line-height:1.75; color:var(–dim); }
-body.ar .out-text { font-size:13.5px; }
 
 .principle {
 grid-column:1/-1; background:var(–red);
@@ -294,10 +268,7 @@ font-family:‘Bebas Neue’,sans-serif;
 font-size:clamp(18px,2vw,28px); letter-spacing:2px;
 color:var(–white); position:relative; margin-top:1px;
 }
-body.ar .principle {
-font-family:‘Tajawal’,sans-serif; font-weight:700;
-letter-spacing:0; font-size:clamp(17px,1.8vw,24px);
-}
+
 .principle em { color:var(–black); font-style:normal; }
 
 /* RESULTS */
@@ -314,24 +285,17 @@ font-family:‘Bebas Neue’,sans-serif;
 font-size:400px; color:rgba(245,240,232,0.02);
 pointer-events:none; user-select:none; line-height:1;
 }
-body.ar .results-bg { right:auto; left:-100px; }
 
 .results-label {
 font-size:10px; letter-spacing:5px; text-transform:uppercase;
 color:var(–red); margin-bottom:16px;
 }
-body.ar .results-label { letter-spacing:1px; font-size:12px; }
 
 .results-title {
 font-family:‘Bebas Neue’,sans-serif;
 font-size:clamp(52px,8vw,110px);
 line-height:0.9; letter-spacing:2px; margin-bottom:72px;
 color:var(–white);
-}
-body.ar .results-title {
-font-family:‘Tajawal’,sans-serif; font-weight:800;
-font-size:clamp(42px,6.5vw,90px);
-letter-spacing:0; line-height:1.05;
 }
 
 .results-grid {
@@ -348,7 +312,7 @@ content:’’; position:absolute; bottom:0; left:0;
 width:0; height:2px; background:var(–red);
 transition:width 0.6s cubic-bezier(0.22,1,0.36,1);
 }
-body.ar .r-cell::after { left:auto; right:0; }
+
 .r-cell:hover { background:#0f0f0f; }
 .r-cell:hover::after { width:100%; }
 .r-cell:hover .r-num { color:var(–red); }
@@ -358,11 +322,10 @@ font-family:‘Bebas Neue’,sans-serif;
 font-size:clamp(52px,6vw,80px); color:var(–white);
 line-height:1; letter-spacing:1px; transition:color 0.4s ease;
 }
-body.ar .r-num { font-family:‘Tajawal’,sans-serif; font-weight:800; }
+
 .r-label { font-size:12px; color:var(–dim); margin-top:12px; line-height:1.5; }
-body.ar .r-label { font-size:13px; }
+
 .r-source { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(–red); margin-top:6px; opacity:0.7; }
-body.ar .r-source { letter-spacing:0; font-size:11px; }
 
 /* CLOSING */
 .closing {
@@ -386,18 +349,13 @@ font-size:clamp(52px,9vw,130px);
 line-height:0.9; letter-spacing:2px; margin-bottom:32px;
 color:var(–white); max-width:900px;
 }
-body.ar .closing-title {
-font-family:‘Tajawal’,sans-serif; font-weight:800;
-font-size:clamp(40px,7vw,100px);
-letter-spacing:0; line-height:1.1;
-}
+
 .closing-title span { color:var(–red); }
 
 .closing-sub {
 font-size:14px; color:var(–dim); margin-bottom:52px; font-weight:300;
 letter-spacing:1px;
 }
-body.ar .closing-sub { font-size:15px; letter-spacing:0; }
 
 .closing-links { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
 .clink {
@@ -406,7 +364,7 @@ text-transform:uppercase; text-decoration:none;
 font-family:‘DM Sans’,sans-serif; font-weight:500;
 transition:all 0.35s ease;
 }
-body.ar .clink { font-family:‘Tajawal’,sans-serif; letter-spacing:0; font-size:13px; }
+
 .clink-primary { background:var(–red); color:var(–white); }
 .clink-primary:hover { background:var(–red2); }
 .clink-secondary { border:1px solid var(–border); color:var(–white); }
@@ -422,10 +380,9 @@ display:flex; justify-content:space-between; align-items:center;
 font-family:‘Bebas Neue’,sans-serif;
 font-size:18px; letter-spacing:4px; color:var(–white);
 }
-body.ar .footer-brand { font-family:‘Tajawal’,sans-serif; font-weight:800; letter-spacing:0; }
+
 .footer-brand span { color:var(–red); }
 .footer-tag { font-size:11px; color:var(–dim); letter-spacing:2px; text-transform:uppercase; }
-body.ar .footer-tag { letter-spacing:0; font-size:12px; font-family:‘Tajawal’,sans-serif; }
 
 /* REVEAL */
 .reveal {
@@ -466,16 +423,13 @@ footer { flex-direction:column; gap:10px; }
 </style>
 
 </head>
-<body class="en">
+<body>
 
 <nav id="nav">
   <div class="nav-logo">S<span>.</span>F</div>
-  <button class="lang-btn" onclick="toggleLang()">عربي</button>
 </nav>
 
-<!-- ═══════ EN ═══════ -->
-
-<section class="hero" data-lang="en">
+<section class="hero">
   <div class="hero-bg-num">SQ</div>
   <div class="hero-rule"></div>
   <p class="hero-tag">When Strategy Meets Results</p>
@@ -491,7 +445,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<section class="edge" data-lang="en">
+<section class="edge">
   <p class="edge-label">Why Sultan</p>
   <h2 class="edge-question reveal">Ever met someone who<br>actually <span>moved Amazon?</span></h2>
   <div class="edge-points">
@@ -510,7 +464,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<div class="cases" data-lang="en">
+<div class="cases">
 
   <div class="case">
     <div class="case-header reveal">
@@ -689,7 +643,7 @@ footer { flex-direction:column; gap:10px; }
 
 </div>
 
-<section class="results" data-lang="en">
+<section class="results">
   <div class="results-bg">%</div>
   <p class="results-label reveal">From Battles to Numbers</p>
   <h2 class="results-title reveal">Results<br>at a Glance</h2>
@@ -703,7 +657,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<section class="closing" data-lang="en">
+<section class="closing">
   <div class="closing-rule"></div>
   <h2 class="closing-title reveal">If Saudi Arabia<br>is your battle —<br><span>count me as an ally</span></h2>
   <p class="closing-sub reveal">The problem everyone avoids — I go looking for it.</p>
@@ -713,205 +667,45 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<footer data-lang="en">
+<footer>
   <div class="footer-brand">Sultan <span>Alqahtani</span></div>
   <div class="footer-tag">CCXP® · CX Strategist · Saudi Market</div>
 </footer>
 
-<!-- ═══════ AR ═══════ -->
-
-<section class="hero" data-lang="ar">
-  <div class="hero-bg-num">س ق</div>
-  <div class="hero-rule"></div>
-  <p class="hero-tag">حين تلتقي الاستراتيجية بالنتائج</p>
-  <h1 class="hero-name">سلطان</h1>
-  <div class="hero-bottom">
-    <p class="hero-desc">استراتيجي تجربة عملاء. متخصص السوق السعودي.<br>أرحل في السوق وأدور المشكلة اللي الكل يتهرب منها.</p>
-    <div class="hero-stats">
-      <div class="hstat"><div class="hstat-num">100<span>%</span></div><div class="hstat-label">تفعيل البطاقات</div></div>
-      <div class="hstat"><div class="hstat-num">400<span>%</span></div><div class="hstat-label">نمو الإيرادات</div></div>
-      <div class="hstat"><div class="hstat-num">17<span>%-</span></div><div class="hstat-label">تراجع الاستياء</div></div>
-      <div class="hstat"><div class="hstat-num">57<span>%</span></div><div class="hstat-label">تحويل العملاء</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="edge" data-lang="ar">
-  <p class="edge-label">ليش سلطان</p>
-  <h2 class="edge-question reveal">هل صادفت شخص نجح<br><span>يحرّك أمازون؟</span></h2>
-  <div class="edge-points">
-    <div class="edge-point reveal d1"><div class="edge-num">01</div><p class="edge-text"><strong>لما شركة الآن دخلت السوق السعودي — حصلوني انتظرهم ومعاي كتيّب النجاة.</strong> ما كان فيه خطة. بنيتها من الصفر.</p></div>
-    <div class="edge-point reveal d2"><div class="edge-num">02</div><p class="edge-text"><strong>شهادة CCXP في العالم اقل من 6000 شخص يملكها.</strong> في السعودية؟ تعدهم بأصابع يد وحدة.</p></div>
-    <div class="edge-point reveal d3"><div class="edge-num">03</div><p class="edge-text"><strong>7 سنوات، 6 قطاعات.</strong> ما دخلت قطاع الا تركت اثر فيه.</p></div>
-  </div>
-</section>
-
-<div class="cases" data-lang="ar">
-
-  <div class="case">
-    <div class="case-header reveal"><div class="case-index">01</div><div class="case-meta"><div class="case-co">الآن باي · فينتك · السعودية</div><div class="case-title">من الفوضى إلى عملاء وفيين</div></div></div>
-    <div class="case-body">
-      <div class="col reveal d1"><div class="col-label">السياق</div><div class="ctx-item"><span class="ctx-dash">—</span><span>الوحيد السعودي على الأرض وقت الإطلاق.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>منافسون يستهدفون عملاءنا بشكل ممنهج.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>عملاء يتوقفون في آخر خطوة من الانضمام.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>نجاح التوسع كان مرهوناً بتجربة العميل.</span></div></div>
-      <div class="col col-int reveal d2"><div class="col-label">التدخل</div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">إعلان الطوارئ</span>جمعت المبيعات والتسويق والعمليات والمنتج في اجتماع عاجل. اتجاه واحد، هدف واحد.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">تفاصيل تحكي بالعربي</span>أضفت رمز الريال السعودي كأول فينتك يسوي ذلك. ثقة فورية وانتماء محلي.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">إزالة العوائق</span>رسمت نقاط الاحتكاك في الانضمام وأتمتة الفجوات مع العمليات.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">حرب البيانات</span>رصدت ضعف المنافس في التموضع والمنتج. حولت ضعفهم لميزتنا.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">قلبت الموازين</span>حولت المعطيات لحملة تميزنا كأول فينتك سعودي.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">مبادرة جريئة</span>أرسلت دونات وقهوة للعملاء المحتملين — هذا لأنكم لا تستخدمون برنامجنا بعد. انتشار عفوي فوري.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">تجربة توصيل البطاقة</span>أتمتة إشعارات واتساب لحظة الشحن مع رابط تفعيل وباركود ذكي. صفر احتكاك.</div></div></div>
-      <div class="col reveal d3"><div class="col-label">النتيجة</div><div class="out-item"><span class="out-dot"></span><span class="out-text">100% معدل تفعيل البطاقات بعد الأتمتة.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">أتمتة واتساب نشرت في أقل من أسبوعين.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">57% من العملاء المستهدفين تحولوا لعملاء وفيين.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">منشورات لينكدإن عفوية بدون ميزانية.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">الرئيس التنفيذي والمدير العام اعترفا بالأسلوب كرافعة استراتيجية.</span></div></div>
-      <div class="principle reveal d4">كلما ارتفع الرهان وغاب الوضوح — <em>أنا في قمة أدائي</em></div>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-header reveal"><div class="case-index">02</div><div class="case-meta"><div class="case-co">زد · تجارة إلكترونية · السعودية</div><div class="case-title">أين تختبئ نقاط الاحتكاك</div></div></div>
-    <div class="case-body">
-      <div class="col reveal d1"><div class="col-label">السياق</div><div class="ctx-item"><span class="ctx-dash">—</span><span>استياء التجار بدون سبب واضح.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>نقاط الألم غير مرئية في التقارير — الصمت كان المشكلة.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>الدعم مضغوط وما أحد يعرف المصدر.</span></div></div>
-      <div class="col col-int reveal d2"><div class="col-label">التدخل</div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">رسم رحلة العميل</span>خرائط الحرارة وتحليل صوت العميل كشفت احتكاكاً ما كان أحد يرصده.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">فتح تكامل أمازون</span>حددته كأعلى خطوة تأثيراً. دفعت به للأمام بسرعة.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">إعادة بناء هيكل التصعيد</span>استبدلت نظام الدعم التفاعلي بنماذج مبنية على سلوك التجار.</div></div></div>
-      <div class="col reveal d3"><div class="col-label">النتيجة</div><div class="out-item"><span class="out-dot"></span><span class="out-text">17% انخفاض في استياء التجار خلال 45 يوماً.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">ارتفاع رضا العملاء بعد تكامل أمازون.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">الدعم تحول من إطفاء حرائق إلى تدخل استباقي.</span></div></div>
-      <div class="principle reveal d4">أبحث عن الاحتكاك حيث يختبئ — <em>في الصمت لا في الشكاوى</em></div>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-header reveal"><div class="case-index">03</div><div class="case-meta"><div class="case-co">أمازون · عمليات عالمية · السعودية</div><div class="case-title">تحريك اللي ما يتحرك</div></div></div>
-    <div class="case-body">
-      <div class="col reveal d1"><div class="col-label">السياق</div><div class="ctx-item"><span class="ctx-dash">—</span><span>تراجع صامت في الروح المعنوية.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>أدلة مكتوبة ما أحد يقرأها — تذاكر تتراكم.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>اقتراحات الفريق تُدفن قبل ما تصل للقيادة.</span></div></div>
-      <div class="col col-int reveal d2"><div class="col-label">التدخل</div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">أنهيت الأدلة المكتوبة</span>استبدلتها بفيديوهات قصيرة. المشاكل الشائعة توقفت عن توليد تذاكر.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">ورش تحليل الجذر</span>كشفت عيوب منهجية وأعطت الفريق لغة هيكلية للمشاكل.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">دليل استباقي</span>رسمت اتجاهات العيوب للتدخل قبل ما يشعر بها العميل.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">نصحت المدير الإقليمي</span>حلقات تغذية راجعة وبرامج تقدير. توصية واحدة اعتُمدت ونُفّذت.</div></div></div>
-      <div class="col reveal d3"><div class="col-label">النتيجة</div><div class="out-item"><span class="out-dot"></span><span class="out-text">25% انخفاض في وقت حل المشكلات.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">2 من 2 مقترحات — كلاهما اعتُمد ونُفّذ.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">تحسن ملموس في الروح المعنوية.</span></div></div>
-      <div class="principle reveal d4">لو الناس ما تقرأ — <em>ابنِ تجربة ما تحتاج قراءة</em></div>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-header reveal"><div class="case-index">04</div><div class="case-meta"><div class="case-co">إل جي إلكترونيكس · تقنية · السعودية</div><div class="case-title">لما الأرقام تتكلم أعلى من التردد</div></div></div>
-    <div class="case-body">
-      <div class="col reveal d1"><div class="col-label">السياق</div><div class="ctx-item"><span class="ctx-dash">—</span><span>تكاليف عالية وشهية سوقية غير واضحة.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>فريق المنتج عالق بدون بيانات محلية تبرر الإطلاق.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>منتج بإمكانات حقيقية ينتظر في الغرفة.</span></div></div>
-      <div class="col col-int reveal d2"><div class="col-label">التدخل</div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">لوحة استشعار السوق</span>رسمت إمكانات الطلب مقابل التكاليف. حولت التردد لقرار مبني على بيانات.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">تعمقت في السياق السعودي</span>دمجت الديموغرافيا وسلوك الشراء واتجاهات المنزل الذكي والعمل عن بعد.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">ربطت تجربة العميل بسلسلة الإمداد</span>جسّرت إشارات العملاء من المبيعات والدعم والتجزئة لتخطيط المخزون.</div></div></div>
-      <div class="col reveal d3"><div class="col-label">النتيجة</div><div class="out-item"><span class="out-dot"></span><span class="out-text">الإطلاق حصل على الضوء الأخضر.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">اللوحة أثبتت أن السعودية السوق المثالي.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">صرت معروفاً كالشخص اللي يحول البصيرة لقرارات.</span></div></div>
-      <div class="principle reveal d4">تجربة العميل ما تقف عند الرضا — <em>هي اللي تحدد ما يوصل للرف</em></div>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-header reveal"><div class="case-index">05</div><div class="case-meta"><div class="case-co">ماكدونالدز · عمليات · الولايات المتحدة</div><div class="case-title">التفكير المنظومي عمري 18</div></div></div>
-    <div class="case-body">
-      <div class="col reveal d1"><div class="col-label">السياق</div><div class="ctx-item"><span class="ctx-dash">—</span><span>المقاييس خضراء. كل شي يبدو تمام. شيء ما كان صح.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>كل موظف دعم عنده قوة خفية ما أحد يستغلها.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>التوزيع العشوائي يضيّع الميزة الفردية.</span></div></div>
-      <div class="col col-int reveal d2"><div class="col-label">التدخل</div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">تحقيق من الظل</span>راقبت أنماط الأداء عبر أنواع المكالمات. رسمت من يتفوق فعلاً في كل نوع.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">مصفوفة مهارات</span>نظام توجيه يطابق المكالمات مع نقاط القوة. بدون برامج. بدون ميزانية. ذكاء بحت.</div></div></div>
-      <div class="col reveal d3"><div class="col-label">النتيجة</div><div class="out-item"><span class="out-dot"></span><span class="out-text">ارتفاع رضا العملاء بعد التطبيق.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">انخفاض وقت الحل لأن كل موظف يعمل في قوته.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">ارتفاع الروح المعنوية — الناس شعرت إنها مرئية.</span></div></div>
-      <div class="principle reveal d4">ما أحتاج إذن لأصلح المشكلة — <em>أشوفها، أتصرف، أحسّن</em></div>
-    </div>
-  </div>
-
-  <div class="case">
-    <div class="case-header reveal"><div class="case-index">06</div><div class="case-meta"><div class="case-co">جست تاكو · مطاعم · السعودية · تطوعي</div><div class="case-title">شغل مجاني. نمو 400%. بدون اعتذار.</div></div></div>
-    <div class="case-body">
-      <div class="col reveal d1"><div class="col-label">السياق</div><div class="ctx-item"><span class="ctx-dash">—</span><span>براند صغير عالق عند 8 آلاف ريال يومياً.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>غير مرئي على السوشال. بدون ميزانية. بدون استراتيجية.</span></div><div class="ctx-item"><span class="ctx-dash">—</span><span>بدون عقد. بدون أجر. فقط إيمان.</span></div></div>
-      <div class="col col-int reveal d2"><div class="col-label">التدخل</div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">أعدت تأطير المنتج</span>توقفت عن بيع تاكو. بدأت ببيع هوية وشعور. شخصية ثقافية من الصفر.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">حملة محتوى صفري الميزانية</span>قصص وفكاهة وحميمية مع الشارع. العملاء صاروا صنّاع محتوى.</div></div><div class="int-item"><span class="int-dash">—</span><div class="int-body"><span class="int-title">مجتمع لا جمهور</span>مناصرون جعلوا البراند جزءاً من هويتهم. عضوي، مستدام، ينمو لوحده.</div></div></div>
-      <div class="col reveal d3"><div class="col-label">النتيجة</div><div class="out-item"><span class="out-dot"></span><span class="out-text">نمو 400% — من 8 آلاف لـ46 ألف ريال يومياً.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">أسطورة محلية بتفاعل عضوي مستدام.</span></div><div class="out-item"><span class="out-dot"></span><span class="out-text">ميزانية صفر. نتائج كاملة.</span></div></div>
-      <div class="principle reveal d4">لو آمنت — <em>أبذل كل شيء</em></div>
-    </div>
-  </div>
-
-</div>
-
-<section class="results" data-lang="ar">
-  <div class="results-bg">%</div>
-  <p class="results-label reveal">من المعارك إلى الأرقام</p>
-  <h2 class="results-title reveal">النتائج<br>بالأرقام</h2>
-  <div class="results-grid">
-    <div class="r-cell reveal d1"><div class="r-num">22%+</div><div class="r-label">ارتفاع رضا العملاء في 90 يوماً</div><div class="r-source">عبر المحفظة</div></div>
-    <div class="r-cell reveal d1"><div class="r-num">28%-</div><div class="r-label">انخفاض حجم الشكاوى</div><div class="r-source">عبر المحفظة</div></div>
-    <div class="r-cell reveal d2"><div class="r-num">100%</div><div class="r-label">معدل تفعيل البطاقات</div><div class="r-source">الآن باي</div></div>
-    <div class="r-cell reveal d2"><div class="r-num">25%-</div><div class="r-label">وقت حل المشكلات</div><div class="r-source">أمازون</div></div>
-    <div class="r-cell reveal d3"><div class="r-num">17%-</div><div class="r-label">استياء التجار في 45 يوماً</div><div class="r-source">زد</div></div>
-    <div class="r-cell reveal d3"><div class="r-num">400%</div><div class="r-label">نمو الإيرادات بميزانية صفر</div><div class="r-source">جست تاكو</div></div>
-  </div>
-</section>
-
-<section class="closing" data-lang="ar">
-  <div class="closing-rule"></div>
-  <h2 class="closing-title reveal">اذا السوق السعودي<br>كان معركتك —<br><span>أبشر بالفزعة</span></h2>
-  <p class="closing-sub reveal">المشكلة اللي الكل يتهرب منها — أنا رحّال يدورها</p>
-  <div class="closing-links reveal">
-    <a href="/cdn-cgi/l/email-protection#db88aeb7afbab59daaf5b8baa9bebea99bbcb6bab2b7f5b8b4b6" class="clink clink-primary">تواصل معي</a>
-    <a href="https://sa.linkedin.com/in/sultan-alqahtani-ccxp%C2%AE-cxad-901300256" target="_blank" class="clink clink-secondary">لينكدإن</a>
-  </div>
-</section>
-
-<footer data-lang="ar">
-  <div class="footer-brand">سلطان <span>القحطاني</span></div>
-  <div class="footer-tag">CCXP · استراتيجي تجربة عملاء · السوق السعودي</div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-
+<script>
 (function() {
-// Init language
-document.body.className = ‘en’;
-document.documentElement.setAttribute(‘lang’, ‘en’);
-document.documentElement.setAttribute(‘dir’, ‘ltr’);
+  function observeReveals() {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+      obs.observe(el);
+    });
+  }
 
-// Language toggle
-window.toggleLang = function() {
-var body = document.body;
-var btn = document.querySelector(’.lang-btn’);
-// Remove all visible classes so reveals re-animate
-document.querySelectorAll(’.reveal’).forEach(function(el) {
-el.classList.remove(‘visible’);
-});
-if (body.classList.contains(‘en’)) {
-body.classList.remove(‘en’);
-body.classList.add(‘ar’);
-document.documentElement.setAttribute(‘lang’, ‘ar’);
-document.documentElement.setAttribute(‘dir’, ‘rtl’);
-btn.textContent = ‘English’;
-} else {
-body.classList.remove(‘ar’);
-body.classList.add(‘en’);
-document.documentElement.setAttribute(‘lang’, ‘en’);
-document.documentElement.setAttribute(‘dir’, ‘ltr’);
-btn.textContent = ‘عربي’;
-}
-window.scrollTo(0, 0);
-setTimeout(observeReveals, 200);
-};
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
 
-// Scroll reveal - threshold 0 means trigger as soon as 1px is visible
-function observeReveals() {
-if (!(‘IntersectionObserver’ in window)) {
-// Fallback: show everything immediately
-document.querySelectorAll(’.reveal’).forEach(function(el) {
-el.classList.add(‘visible’);
-});
-return;
-}
-var obs = new IntersectionObserver(function(entries) {
-entries.forEach(function(e) {
-if (e.isIntersecting) {
-e.target.classList.add(‘visible’);
-obs.unobserve(e.target);
-}
-});
-}, { threshold: 0, rootMargin: ‘0px 0px -30px 0px’ });
-
-```
-document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
-  obs.observe(el);
-});
-```
-
-}
-
-// Nav scroll
-var nav = document.getElementById(‘nav’);
-window.addEventListener(‘scroll’, function() {
-nav.classList.toggle(‘scrolled’, window.scrollY > 60);
-}, { passive: true });
-
-// Start observing when DOM is ready
-if (document.readyState === ‘loading’) {
-document.addEventListener(‘DOMContentLoaded’, function() {
-setTimeout(observeReveals, 100);
-});
-} else {
-setTimeout(observeReveals, 100);
-}
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(observeReveals, 100);
+    });
+  } else {
+    setTimeout(observeReveals, 100);
+  }
 })();
 </script>
 
