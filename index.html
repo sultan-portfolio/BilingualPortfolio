@@ -36,12 +36,12 @@ body.ar { font-family:‘Tajawal’,sans-serif; direction:rtl; }
 ::-webkit-scrollbar-track { background:var(–black); }
 ::-webkit-scrollbar-thumb { background:var(–red); }
 
-.en-only { display:block; }
-.ar-only { display:none; }
-body.ar .en-only { display:none; }
-body.ar .ar-only { display:block; }
+[data-lang=“en”] { display:block; }
+[data-lang=“ar”] { display:none; }
+body.ar [data-lang=“en”] { display:none; }
+body.ar [data-lang=“ar”] { display:block; }
 
-/* ── NAV ── */
+/* NAV */
 nav {
 position:fixed; top:0; left:0; right:0; z-index:100;
 padding:20px 6vw;
@@ -67,7 +67,7 @@ transition:all 0.35s ease;
 }
 .lang-btn:hover { border-color:var(–red); color:var(–red); }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
 min-height:100vh;
 display:flex; flex-direction:column; justify-content:flex-end;
@@ -149,7 +149,7 @@ color:var(–dim); margin-top:4px; font-weight:500;
 }
 body.ar .hstat-label { letter-spacing:0; font-size:11px; }
 
-/* ── EDGE ── */
+/* EDGE */
 .edge {
 padding:120px 6vw;
 position:relative; overflow:hidden;
@@ -204,7 +204,7 @@ body.ar .edge-num { font-family:‘Tajawal’,sans-serif; font-weight:800; }
 body.ar .edge-text { font-size:15px; }
 .edge-text strong { color:var(–white); font-weight:500; }
 
-/* ── CASES ── */
+/* CASES */
 .cases { border-top:1px solid var(–border); }
 
 .case {
@@ -300,7 +300,7 @@ letter-spacing:0; font-size:clamp(17px,1.8vw,24px);
 }
 .principle em { color:var(–black); font-style:normal; }
 
-/* ── RESULTS ── */
+/* RESULTS */
 .results {
 padding:120px 6vw;
 border-top:1px solid var(–border);
@@ -364,7 +364,7 @@ body.ar .r-label { font-size:13px; }
 .r-source { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(–red); margin-top:6px; opacity:0.7; }
 body.ar .r-source { letter-spacing:0; font-size:11px; }
 
-/* ── CLOSING ── */
+/* CLOSING */
 .closing {
 padding:140px 6vw;
 border-top:1px solid var(–border);
@@ -412,7 +412,7 @@ body.ar .clink { font-family:‘Tajawal’,sans-serif; letter-spacing:0; font-si
 .clink-secondary { border:1px solid var(–border); color:var(–white); }
 .clink-secondary:hover { border-color:var(–red); color:var(–red); }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
 padding:28px 6vw;
 border-top:1px solid var(–border);
@@ -427,7 +427,7 @@ body.ar .footer-brand { font-family:‘Tajawal’,sans-serif; font-weight:800; l
 .footer-tag { font-size:11px; color:var(–dim); letter-spacing:2px; text-transform:uppercase; }
 body.ar .footer-tag { letter-spacing:0; font-size:12px; font-family:‘Tajawal’,sans-serif; }
 
-/* ── REVEAL ── */
+/* REVEAL */
 .reveal {
 opacity:0;
 transform:translateY(56px);
@@ -447,7 +447,7 @@ from { opacity:0; transform:translateY(36px); }
 to   { opacity:1; transform:translateY(0); }
 }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media (max-width:960px) {
 .case-body { grid-template-columns:1fr; }
 .principle { grid-column:1; }
@@ -475,9 +475,7 @@ footer { flex-direction:column; gap:10px; }
 
 <!-- ═══════ EN ═══════ -->
 
-<div class="en-only">
-
-<section class="hero">
+<section class="hero" data-lang="en">
   <div class="hero-bg-num">SQ</div>
   <div class="hero-rule"></div>
   <p class="hero-tag">When Strategy Meets Results</p>
@@ -493,7 +491,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<section class="edge">
+<section class="edge" data-lang="en">
   <p class="edge-label">Why Sultan</p>
   <h2 class="edge-question reveal">Ever met someone who<br>actually <span>moved Amazon?</span></h2>
   <div class="edge-points">
@@ -512,7 +510,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<div class="cases">
+<div class="cases" data-lang="en">
 
   <div class="case">
     <div class="case-header reveal">
@@ -691,7 +689,7 @@ footer { flex-direction:column; gap:10px; }
 
 </div>
 
-<section class="results">
+<section class="results" data-lang="en">
   <div class="results-bg">%</div>
   <p class="results-label reveal">From Battles to Numbers</p>
   <h2 class="results-title reveal">Results<br>at a Glance</h2>
@@ -705,7 +703,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<section class="closing">
+<section class="closing" data-lang="en">
   <div class="closing-rule"></div>
   <h2 class="closing-title reveal">If Saudi Arabia<br>is your battle —<br><span>count me as an ally</span></h2>
   <p class="closing-sub reveal">The problem everyone avoids — I go looking for it.</p>
@@ -715,18 +713,14 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<footer>
+<footer data-lang="en">
   <div class="footer-brand">Sultan <span>Alqahtani</span></div>
   <div class="footer-tag">CCXP® · CX Strategist · Saudi Market</div>
 </footer>
 
-</div><!-- /en -->
-
 <!-- ═══════ AR ═══════ -->
 
-<div class="ar-only">
-
-<section class="hero">
+<section class="hero" data-lang="ar">
   <div class="hero-bg-num">س ق</div>
   <div class="hero-rule"></div>
   <p class="hero-tag">حين تلتقي الاستراتيجية بالنتائج</p>
@@ -742,7 +736,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<section class="edge">
+<section class="edge" data-lang="ar">
   <p class="edge-label">ليش سلطان</p>
   <h2 class="edge-question reveal">هل صادفت شخص نجح<br><span>يحرّك أمازون؟</span></h2>
   <div class="edge-points">
@@ -752,7 +746,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<div class="cases">
+<div class="cases" data-lang="ar">
 
   <div class="case">
     <div class="case-header reveal"><div class="case-index">01</div><div class="case-meta"><div class="case-co">الآن باي · فينتك · السعودية</div><div class="case-title">من الفوضى إلى عملاء وفيين</div></div></div>
@@ -816,7 +810,7 @@ footer { flex-direction:column; gap:10px; }
 
 </div>
 
-<section class="results">
+<section class="results" data-lang="ar">
   <div class="results-bg">%</div>
   <p class="results-label reveal">من المعارك إلى الأرقام</p>
   <h2 class="results-title reveal">النتائج<br>بالأرقام</h2>
@@ -830,7 +824,7 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<section class="closing">
+<section class="closing" data-lang="ar">
   <div class="closing-rule"></div>
   <h2 class="closing-title reveal">اذا السوق السعودي<br>كان معركتك —<br><span>أبشر بالفزعة</span></h2>
   <p class="closing-sub reveal">المشكلة اللي الكل يتهرب منها — أنا رحّال يدورها</p>
@@ -840,40 +834,86 @@ footer { flex-direction:column; gap:10px; }
   </div>
 </section>
 
-<footer>
+<footer data-lang="ar">
   <div class="footer-brand">سلطان <span>القحطاني</span></div>
   <div class="footer-tag">CCXP · استراتيجي تجربة عملاء · السوق السعودي</div>
 </footer>
 
-</div><!-- /ar -->
-
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
-function toggleLang() {
-const body = document.body;
-const btn = document.querySelector(’.lang-btn’);
-document.querySelectorAll(’.reveal’).forEach(el => el.classList.remove(‘visible’));
+(function() {
+// Init language
+document.body.className = ‘en’;
+document.documentElement.setAttribute(‘lang’, ‘en’);
+document.documentElement.setAttribute(‘dir’, ‘ltr’);
+
+// Language toggle
+window.toggleLang = function() {
+var body = document.body;
+var btn = document.querySelector(’.lang-btn’);
+// Remove all visible classes so reveals re-animate
+document.querySelectorAll(’.reveal’).forEach(function(el) {
+el.classList.remove(‘visible’);
+});
 if (body.classList.contains(‘en’)) {
-body.classList.replace(‘en’,‘ar’);
-document.documentElement.setAttribute(‘lang’,‘ar’);
-document.documentElement.setAttribute(‘dir’,‘rtl’);
+body.classList.remove(‘en’);
+body.classList.add(‘ar’);
+document.documentElement.setAttribute(‘lang’, ‘ar’);
+document.documentElement.setAttribute(‘dir’, ‘rtl’);
 btn.textContent = ‘English’;
 } else {
-body.classList.replace(‘ar’,‘en’);
-document.documentElement.setAttribute(‘lang’,‘en’);
-document.documentElement.setAttribute(‘dir’,‘ltr’);
+body.classList.remove(‘ar’);
+body.classList.add(‘en’);
+document.documentElement.setAttribute(‘lang’, ‘en’);
+document.documentElement.setAttribute(‘dir’, ‘ltr’);
 btn.textContent = ‘عربي’;
 }
-window.scrollTo(0,0);
-setTimeout(observeReveals, 150);
-}
+window.scrollTo(0, 0);
+setTimeout(observeReveals, 200);
+};
 
+// Scroll reveal - threshold 0 means trigger as soon as 1px is visible
 function observeReveals() {
-const obs = new IntersectionObserver(entries => {
-entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add(‘visible’); obs.unobserve(e.target); } });
-}, { threshold:0.08 });
-document.querySelectorAll(’.reveal:not(.visible)’).forEach(el => obs.observe(el));
+if (!(‘IntersectionObserver’ in window)) {
+// Fallback: show everything immediately
+document.querySelectorAll(’.reveal’).forEach(function(el) {
+el.classList.add(‘visible’);
+});
+return;
+}
+var obs = new IntersectionObserver(function(entries) {
+entries.forEach(function(e) {
+if (e.isIntersecting) {
+e.target.classList.add(‘visible’);
+obs.unobserve(e.target);
+}
+});
+}, { threshold: 0, rootMargin: ‘0px 0px -30px 0px’ });
+
+```
+document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+  obs.observe(el);
+});
+```
+
 }
 
-const nav = document.getElementById(‘nav’);
-window.addEventListener(‘scroll’, () => nav.classList.toggle(’scro
+// Nav scroll
+var nav = document.getElementById(‘nav’);
+window.addEventListener(‘scroll’, function() {
+nav.classList.toggle(‘scrolled’, window.scrollY > 60);
+}, { passive: true });
+
+// Start observing when DOM is ready
+if (document.readyState === ‘loading’) {
+document.addEventListener(‘DOMContentLoaded’, function() {
+setTimeout(observeReveals, 100);
+});
+} else {
+setTimeout(observeReveals, 100);
+}
+})();
+</script>
+
+</body>
+</html>
