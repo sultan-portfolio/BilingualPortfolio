@@ -1,522 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tasheel Finance — Strategic Vision & Roadmap</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* =========================================
-   1. CORE VARIABLES & RESET
-   ========================================= */
-:root {
-  --green: #5B9E3A;
-  --green-dark: #3d6e27;
-  --green-light: #EBF5E1;
-  --green-mid: #c8e6b0;
-  --dark: #1A1A1A;
-  --mid: #555555;
-  --muted: #888888;
-  --white: #FFFFFF;
-  --off: #FBFBFD;
-  --accent-red: #E74C3C;
-  --accent-orange: #E65100;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasheel Finance — Strategic Vision & Execution Roadmap | Sultan Alqahtani</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #5B9E3A;
+            --green-dark: #3d6e27;
+            --green-light: #EBF5E1;
+            --green-mid: #c8e6b0;
+            --dark: #1A1A1A;
+            --mid: #555555;
+            --muted: #888888;
+            --white: #FFFFFF;
+            --off: #FBFBFD;
+            --accent-red: #E74C3C;
+            --accent-orange: #E65100;
+        }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background: var(--dark); 
+            color: var(--dark); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-html { 
-    scroll-behavior: smooth; 
-}
+        /* --- ANIMATIONS --- */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(40px) scale(0.98); 
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); 
+            will-change: transform, opacity;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
 
-body { 
-    font-family: 'DM Sans', sans-serif; 
-    background: var(--dark); 
-    color: var(--dark); 
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
+        /* --- LAYOUT --- */
+        .section { 
+            width: 100%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            overflow: hidden; 
+            padding: clamp(100px, 15vh, 160px) clamp(24px, 6vw, 80px); 
+        }
+        .section.full { min-height: 100vh; }
+        .section-inner { width: 100%; max-width: 1140px; position: relative; z-index: 2; }
+        .bg-dark { background: var(--dark); color: var(--white); }
+        .bg-off { background: var(--off); }
+        .bg-white { background: var(--white); }
+        .bg-orb { 
+            position: absolute; border-radius: 50%; background: var(--green); 
+            opacity: 0.08; filter: blur(90px); pointer-events: none; 
+        }
 
-/* =========================================
-   2. REVEAL ANIMATIONS (APPLE-STYLE)
-   ========================================= */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(40px) scale(0.98); 
-    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); 
-    will-change: transform, opacity;
-}
+        /* --- TYPOGRAPHY --- */
+        .eyebrow { 
+            font-size: 13px; font-weight: 700; letter-spacing: 4px; 
+            text-transform: uppercase; color: var(--green); margin-bottom: 24px; display: block; 
+        }
+        .h-display { 
+            font-family: 'DM Serif Display', serif; font-size: clamp(52px, 8vw, 100px); 
+            line-height: 1.05; margin-bottom: 32px; letter-spacing: -1.5px; 
+        }
+        .h-display em { font-style: italic; color: var(--green); }
+        .h-section { 
+            font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 60px); 
+            line-height: 1.1; margin-bottom: 16px; 
+        }
 
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0) scale(1); 
-}
+        /* --- COMPONENTS --- */
+        .about-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 50px; }
+        .about-card { 
+            background: var(--white); border-radius: 24px; padding: 40px; 
+            border: 1px solid rgba(0,0,0,0.04); transition: transform 0.4s ease; 
+        }
+        .about-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+        .about-card h3 { font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 16px; }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
+        .pattern-card { 
+            background: var(--white); border-radius: 28px; overflow: hidden; 
+            box-shadow: 0 24px 80px rgba(0,0,0,0.06); margin-bottom: 60px;
+        }
+        .pattern-header { padding: 45px 60px; display: flex; justify-content: space-between; border-bottom: 1px solid #F4F4F4; }
+        .pattern-body { display: grid; grid-template-columns: 1.2fr 1fr 1.3fr; }
+        .pattern-col { padding: 45px 60px; border-right: 1px solid #F4F4F4; }
+        .pattern-col:last-child { border-right: none; }
+        .col-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 30px; border-bottom: 2px solid var(--green-mid); padding-bottom: 12px; }
+        
+        .quote-ui { background: var(--off); border-radius: 16px; padding: 28px; border-left: 4px solid var(--green); margin-bottom: 20px; }
+        .quote-ui p { font-size: 15px; line-height: 1.8; font-style: italic; }
+        .sol-item { display: flex; gap: 18px; margin-bottom: 28px; }
+        .sol-ball { width: 36px; height: 36px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; flex-shrink: 0; }
 
-/* =========================================
-   3. LAYOUT & STRUCTURE
-   ========================================= */
-.section { 
-    width: 100%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    position: relative; 
-    overflow: hidden; 
-    padding: clamp(100px, 15vh, 160px) clamp(24px, 6vw, 80px); 
-}
+        .moat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 60px; }
+        .moat-card { background: rgba(255,255,255,0.03); padding: 50px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); }
 
-.section.full { 
-    min-height: 100vh; 
-}
+        .roadmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+        .roadmap-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 45px; }
+        .roadmap-step { display: flex; gap: 14px; margin-bottom: 20px; font-size: 15px; color: #d1d1d1; }
+        .roadmap-step span { color: var(--green); font-weight: 700; }
+        .kpi-tag { background: var(--green); color: #fff; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 700; margin-top: 24px; display: inline-block; }
 
-.section-inner { 
-    width: 100%; 
-    max-width: 1140px; 
-    position: relative; 
-    z-index: 2; 
-}
+        .metric-card { flex: 1; background: #fff; padding: 40px; border-radius: 20px; text-align: center; min-width: 240px; box-shadow: 0 12px 40px rgba(0,0,0,0.04); }
 
-.bg-dark  { background: var(--dark); color: var(--white); }
-.bg-off   { background: var(--off); }
-.bg-white { background: var(--white); }
+        /* --- NAVIGATION --- */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 5px; background: var(--green); width: 0%; z-index: 1000; }
+        .side-nav { position: fixed; right: 40px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 14px; z-index: 100; }
+        .side-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(150,150,150,0.3); cursor: pointer; transition: 0.4s; }
+        .side-dot.active { background: var(--green); height: 30px; border-radius: 5px; }
 
-.bg-orb { 
-    position: absolute; 
-    border-radius: 50%; 
-    background: var(--green); 
-    opacity: 0.08; 
-    filter: blur(90px); 
-    pointer-events: none; 
-}
-
-/* =========================================
-   4. TYPOGRAPHY
-   ========================================= */
-.eyebrow { 
-    font-size: 13px; 
-    font-weight: 700; 
-    letter-spacing: 4px; 
-    text-transform: uppercase; 
-    color: var(--green); 
-    margin-bottom: 24px; 
-    display: block; 
-}
-
-.h-display { 
-    font-family: 'DM Serif Display', serif; 
-    font-size: clamp(52px, 8vw, 100px); 
-    line-height: 1.05; 
-    margin-bottom: 32px; 
-    letter-spacing: -1.5px; 
-}
-
-.h-display em { 
-    font-style: italic; 
-    color: var(--green); 
-}
-
-.h-section { 
-    font-family: 'DM Serif Display', serif; 
-    font-size: clamp(36px, 5vw, 60px); 
-    line-height: 1.1; 
-    margin-bottom: 16px; 
-    letter-spacing: -0.5px; 
-}
-
-.h-sub { 
-    font-size: 20px; 
-    color: var(--muted); 
-    font-style: italic; 
-    margin-bottom: 50px; 
-    max-width: 700px;
-    line-height: 1.6;
-}
-
-/* =========================================
-   5. LOGO & BRANDING
-   ========================================= */
-.cover-logo { 
-    display: flex; 
-    align-items: center; 
-    gap: 16px; 
-    margin-bottom: 70px; 
-}
-
-.logo-bars { 
-    display: flex; 
-    gap: 6px; 
-    align-items: flex-end; 
-}
-
-.logo-bars span { 
-    display: block; 
-    background: var(--green); 
-    border-radius: 4px; 
-}
-
-.logo-bars span:nth-child(1) { width: 12px; height: 28px; }
-.logo-bars span:nth-child(2) { width: 12px; height: 42px; }
-.logo-bars span:nth-child(3) { width: 12px; height: 20px; }
-
-.logo-name { 
-    font-size: 15px; 
-    font-weight: 700; 
-    color: #999; 
-    letter-spacing: 5px; 
-    text-transform: uppercase; 
-}
-
-/* =========================================
-   6. VISION GRID (4 CARDS)
-   ========================================= */
-.about-grid { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px; 
-    margin-top: 50px; 
-}
-
-.about-card { 
-    background: var(--white); 
-    border-radius: 24px; 
-    padding: 40px; 
-    border: 1px solid rgba(0,0,0,0.04); 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
-    transition: transform 0.4s ease, box-shadow 0.4s ease; 
-}
-
-.about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-}
-
-.about-card h3 { 
-    font-family: 'DM Serif Display', serif; 
-    font-size: 26px; 
-    margin-bottom: 16px; 
-    color: var(--dark); 
-}
-
-.about-card p { 
-    font-size: 16px; 
-    color: var(--mid); 
-    line-height: 1.8; 
-}
-
-/* =========================================
-   7. DIAGNOSIS PATTERNS
-   ========================================= */
-.pattern-card { 
-    background: var(--white); 
-    border-radius: 28px; 
-    overflow: hidden; 
-    box-shadow: 0 24px 80px rgba(0,0,0,0.06); 
-    border: 1px solid rgba(0,0,0,0.03); 
-    margin-bottom: 40px;
-}
-
-.pattern-header { 
-    padding: 45px 60px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
-    border-bottom: 1px solid #F4F4F4; 
-}
-
-.pattern-num { 
-    font-family: 'DM Serif Display', serif; 
-    font-size: 90px; 
-    color: var(--green); 
-    opacity: 0.12; 
-    line-height: 0.8; 
-}
-
-.tag-problem { 
-    display: inline-block; 
-    background: #FFF0F0; 
-    color: var(--accent-red); 
-    padding: 8px 18px; 
-    border-radius: 50px; 
-    font-size: 12px; 
-    font-weight: 700; 
-    letter-spacing: 1.5px; 
-    text-transform: uppercase; 
-    margin-bottom: 16px; 
-}
-
-.pattern-body { 
-    display: grid; 
-    grid-template-columns: 1.2fr 1fr 1.3fr; 
-    gap: 0; 
-}
-
-.pattern-col { 
-    padding: 45px 60px; 
-    border-right: 1px solid #F4F4F4; 
-}
-
-.pattern-col:last-child { 
-    border-right: none; 
-}
-
-.col-label { 
-    font-size: 12px; 
-    font-weight: 700; 
-    letter-spacing: 3px; 
-    text-transform: uppercase; 
-    color: var(--green); 
-    margin-bottom: 30px; 
-    border-bottom: 2px solid var(--green-mid); 
-    padding-bottom: 12px; 
-}
-
-.quote-ui { 
-    background: var(--off); 
-    border-radius: 16px; 
-    padding: 28px; 
-    margin-bottom: 20px; 
-    border-left: 4px solid var(--green); 
-}
-
-.quote-ui p { 
-    font-size: 15px; 
-    line-height: 1.8; 
-    font-style: italic; 
-    color: #222; 
-}
-
-.quote-ui span { 
-    font-size: 11px; 
-    font-weight: 700; 
-    color: var(--green); 
-    display: block; 
-    margin-top: 14px; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-}
-
-.sol-info-block {
-    color: #555; 
-    line-height: 1.8; 
-    font-size: 15px;
-}
-
-.sol-item { 
-    display: flex; 
-    gap: 18px; 
-    margin-bottom: 28px; 
-}
-
-.sol-ball { 
-    width: 36px; 
-    height: 36px; 
-    background: var(--green); 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    color: #fff; 
-    font-weight: 700; 
-    font-size: 14px; 
-    flex-shrink: 0; 
-    box-shadow: 0 4px 10px rgba(91, 158, 58, 0.3);
-}
-
-.sol-info strong { 
-    display: block; 
-    font-size: 16px; 
-    margin-bottom: 6px; 
-    color: var(--dark); 
-}
-
-.sol-info p { 
-    font-size: 14px; 
-    color: #666; 
-    line-height: 1.7; 
-}
-
-.pattern-footer { 
-    padding: 30px 60px; 
-    background: var(--dark); 
-    color: #fff; 
-    font-family: 'DM Serif Display', serif; 
-    font-style: italic; 
-    font-size: 20px; 
-}
-
-.pattern-footer span { 
-    color: var(--green); 
-}
-
-/* =========================================
-   8. EXTRA MOAT & ROADMAP
-   ========================================= */
-.moat-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 40px; 
-    margin-top: 60px;
-}
-
-.moat-card {
-    background: rgba(255,255,255,0.03); 
-    padding: 50px; 
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.roadmap-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 24px; 
-    margin-top: 60px; 
-}
-
-.roadmap-card { 
-    background: rgba(255,255,255,0.02); 
-    border: 1px solid rgba(255,255,255,0.08); 
-    border-radius: 24px; 
-    padding: 45px; 
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.roadmap-card:hover {
-    background: rgba(255,255,255,0.04);
-    border-color: rgba(255,255,255,0.2);
-}
-
-.roadmap-card h3 { 
-    color: var(--green); 
-    font-family: 'DM Serif Display', serif; 
-    font-size: 28px; 
-    margin-bottom: 24px; 
-}
-
-.roadmap-step { 
-    display: flex; 
-    gap: 14px; 
-    margin-bottom: 20px; 
-    font-size: 15px; 
-    color: #d1d1d1; 
-    line-height: 1.6;
-}
-
-.roadmap-step span { 
-    color: var(--green); 
-    font-weight: 700; 
-}
-
-.kpi-tag { 
-    background: var(--green); 
-    color: #fff; 
-    padding: 8px 14px; 
-    border-radius: 6px; 
-    font-size: 12px; 
-    font-weight: 700; 
-    display: inline-block; 
-    margin-top: 24px; 
-    letter-spacing: 1px;
-}
-
-/* =========================================
-   9. KPI DASHBOARD
-   ========================================= */
-.dashboard-grid {
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 24px; 
-    margin-top: 50px;
-}
-
-.metric-card {
-    flex: 1; 
-    background: #fff; 
-    padding: 40px; 
-    border-radius: 20px; 
-    text-align: center; 
-    min-width: 240px; 
-    box-shadow: 0 12px 40px rgba(0,0,0,0.04);
-    border: 1px solid #f0f0f0;
-}
-
-.metric-value {
-    font-size: 42px; 
-    font-family: 'DM Serif Display', serif; 
-    color: var(--green);
-    display: block;
-}
-
-.metric-label {
-    font-size: 13px; 
-    color: #888; 
-    text-transform: uppercase; 
-    margin-top: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* =========================================
-   10. NAVIGATION & PROGRESS
-   ========================================= */
-.progress-bar { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    height: 5px; 
-    background: var(--green); 
-    width: 0%; 
-    z-index: 1000; 
-}
-
-.side-nav { 
-    position: fixed; 
-    right: 40px; 
-    top: 50%; 
-    transform: translateY(-50%); 
-    display: flex; 
-    flex-direction: column; 
-    gap: 14px; 
-    z-index: 100; 
-}
-
-.side-dot { 
-    width: 10px; 
-    height: 10px; 
-    border-radius: 50%; 
-    background: rgba(0,0,0,0.15); 
-    cursor: pointer; 
-    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-}
-
-.bg-dark .side-dot { background: rgba(255,255,255,0.2); }
-.side-dot.active { background: var(--green); height: 30px; border-radius: 5px; }
-
-/* =========================================
-   11. MEDIA QUERIES
-   ========================================= */
-@media (max-width: 1100px) { 
-    .pattern-body { grid-template-columns: 1fr; } 
-    .pattern-col { border-right: none; border-bottom: 1px solid #F4F4F4; }
-    .pattern-col:last-child { border-bottom: none; }
-    .roadmap-grid { grid-template-columns: 1fr; } 
-}
-@media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; }
-    .side-nav { display: none; }
-    .pattern-header { flex-direction: column; }
-    .pattern-num { margin-top: 20px; font-size: 60px; }
-    .section { padding: 80px 24px; }
-}
-</style>
+        @media (max-width: 1100px) { .pattern-body, .roadmap-grid, .about-grid { grid-template-columns: 1fr; } .pattern-col { border-right: none; border-bottom: 1px solid #F4F4F4; } }
+    </style>
 </head>
 <body>
 
@@ -524,360 +126,221 @@ body {
 <div class="side-nav" id="sideNav"></div>
 
 <section class="section full bg-dark" id="s0">
-  <div class="bg-orb" style="width:800px; height:800px; right:-150px; top:-150px;"></div>
-  <div class="section-inner">
-    <div class="cover-logo reveal">
-      <div class="logo-bars"><span></span><span></span><span></span></div>
-      <div class="logo-name">Tasheel Finance</div>
+    <div class="bg-orb" style="width:800px; height:800px; right:-150px; top:-150px;"></div>
+    <div class="section-inner">
+        <span class="eyebrow reveal">Strategic Vision</span>
+        <h1 class="h-display reveal">From Friction<br>to <em>Loyalty.</em></h1>
+        <p class="reveal delay-1" style="font-size:22px; color:#A0A0A0; max-width:650px; border-left:4px solid var(--green); padding-left:28px; line-height:1.8;">
+            A 90-day roadmap transforming overlooked customer pain points into Tasheel's most powerful competitive advantage.
+        </p>
     </div>
-    <span class="eyebrow reveal delay-1">CRM & Loyalty Strategy</span>
-    <h1 class="h-display reveal delay-2">From Friction<br>to <em>Loyalty.</em></h1>
-    <p class="reveal delay-3" style="font-size:22px; color:#A0A0A0; max-width:650px; border-left:4px solid var(--green); padding-left:28px; line-height:1.8;">
-        Transforming overlooked customer pain points into Tasheel's most powerful competitive advantage. A definitive 90-day execution roadmap to secure and scale Customer Lifetime Value.
-    </p>
-  </div>
 </section>
 
 <section class="section bg-off" id="s1">
-  <div class="section-inner">
-    <span class="eyebrow reveal">The Vision</span>
-    <h2 class="h-section reveal">The Opportunity Hidden in Plain Sight</h2>
-    <p class="h-sub reveal">This is not a critique of current operations. It is a strategic map of untapped loyalty potential discovered within the existing customer journey.</p>
-    
-    <div class="about-grid">
-      <div class="about-card reveal">
-        <h3>1. The Diagnostic Approach</h3>
-        <p>I analyzed Tasheel’s external feedback ecosystem and identified systemic patterns. I looked specifically for moments where customers explicitly <em>wanted</em> to remain loyal, but were blocked by operational friction or communication gaps.</p>
-      </div>
-      <div class="about-card reveal delay-1">
-        <h3>2. The Governance Lens</h3>
-        <p>CRM is not just a tool; it is a <strong>Governance Engine</strong>. Every automated SMS, push notification, and collection call must be carefully measured by how much it either adds to, or subtracts from, the overall Customer Lifetime Value (LTV).</p>
-      </div>
-      <div class="about-card reveal delay-2">
-        <h3>3. The eXtra Closed-Loop</h3>
-        <p>We possess an unfair advantage in the market. By leveraging the retail relationship, we can create a "closed-loop" ecosystem where accessible finance fuels retail shopping, and retail shopping loyalty fuels financial compliance.</p>
-      </div>
-      <div class="about-card reveal delay-3">
-        <h3>4. The Ultimate Goal</h3>
-        <p>Transitioning Tasheel from a model of reactive customer support to a standard of <strong>Proactive Loyalty Management</strong>. This means anticipating friction before it occurs through intelligent, data-driven touchpoints.</p>
-      </div>
+    <div class="section-inner">
+        <span class="eyebrow reveal">The Lens</span>
+        <h2 class="h-section reveal">The Opportunity</h2>
+        <div class="about-grid">
+            <div class="about-card reveal">
+                <h3>The Diagnostic</h3>
+                <p>Identifying moments where customers <em>want</em> to be loyal but are blocked by operational communication gaps.</p>
+            </div>
+            <div class="about-card reveal delay-1">
+                <h3>The Governance</h3>
+                <p>CRM as a <strong>Governance Engine</strong>. Every touchpoint either adds to or subtracts from Lifetime Value (LTV).</p>
+            </div>
+            <div class="about-card reveal">
+                <h3>The eXtra Flywheel</h3>
+                <p>A closed-loop ecosystem where finance fuels retail, and retail rewards guarantee financial compliance.</p>
+            </div>
+            <div class="about-card reveal delay-1">
+                <h3>The Goal</h3>
+                <p>Moving from reactive support to <strong>Proactive Loyalty Management</strong> through automated, data-driven touchpoints.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="section bg-white" id="s2">
-  <div class="section-inner">
-    <span class="eyebrow reveal">Pattern 01</span>
-    <div class="pattern-card reveal">
-      <div class="pattern-header">
-        <div>
-            <span class="tag-problem">⚠ Trust Erosion</span>
-            <h2 class="pattern-title" style="font-family: 'DM Serif Display'; font-size: 36px;">The Settlement Black Hole</h2>
+    <div class="section-inner">
+        <div class="pattern-card reveal">
+            <div class="pattern-header">
+                <div><span class="tag-problem">⚠ Trust Erosion</span><h2 class="h-section">Settlement Black Hole</h2></div>
+                <div style="font-family:'DM Serif Display'; font-size:80px; color:var(--green); opacity:0.1;">01</div>
+            </div>
+            <div class="pattern-body">
+                <div class="pattern-col">
+                    <div class="col-label">Customer Voice</div>
+                    <div class="quote-ui"><p>"سددت أول بأول لمدة 24 شهر وخلصت.. لي 5 أشهر أتواصل معهم أقولهم خلصت، ليه ما سويتوا مخالصة؟"</p><span>Google Maps</span></div>
+                </div>
+                <div class="pattern-col">
+                    <div class="col-label">The Problem</div>
+                    <p>Reliable customers get trapped in a "frozen" state post-payment. Operational lag turns warm leads into brand detractors.</p>
+                </div>
+                <div class="pattern-col">
+                    <div class="col-label">The Fix</div>
+                    <div class="sol-item"><div class="sol-ball">1</div><div class="sol-info"><strong>Instant Closure</strong><p>Digital cert + SIMAH update within 24h of final payment.</p></div></div>
+                    <div class="sol-item"><div class="sol-ball">2</div><div class="sol-info"><strong>Re-engagement</strong><p>Automated "Thank You" with a pre-approved limit for the next eXtra purchase.</p></div></div>
+                </div>
+            </div>
         </div>
-        <div class="pattern-num">01</div>
-      </div>
-      <div class="pattern-body">
-        <div class="pattern-col">
-          <div class="col-label">Customer Voice</div>
-          <div class="quote-ui">
-              <p>"سددت أول بأول لمدة 24 شهر وخلصت.. لي 5 أشهر أتواصل معهم أقولهم خلصت، ليه ما سويتوا مخالصة؟ حسابي بالبنك مجمد وسمة ماتحدثت."</p>
-              <span>Verified Google Maps Review</span>
-          </div>
-        </div>
-        <div class="pattern-col">
-          <div class="col-label">The Root Problem</div>
-          <p class="sol-info-block">
-            Customers who successfully complete their financial obligations are entering a <strong>post-settlement void</strong>. Instead of being rewarded for their commitment, their bank accounts remain frozen and SIMAH profiles go un-updated due to operational lag. This turns your absolute best, most reliable prospects into active detractors of the brand.
-          </p>
-        </div>
-        <div class="pattern-col">
-          <div class="col-label">The CRM Fix</div>
-          <div class="sol-item">
-              <div class="sol-ball">1</div>
-              <div class="sol-info">
-                  <strong>Instant Closure API</strong>
-                  <p>Auto-trigger the generation of a digital settlement certificate and push the SIMAH clearance update within exactly 24 hours of the final payment clearing.</p>
-              </div>
-          </div>
-          <div class="sol-item">
-              <div class="sol-ball">2</div>
-              <div class="sol-info">
-                  <strong>Automated Re-engagement</strong>
-                  <p>Deploy a sequenced "Thank You" campaign that celebrates their commitment, immediately followed by offering a pre-approved limit for their next eXtra purchase.</p>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="pattern-footer">
-          "The customer who finishes paying is not the end of a lifecycle; they are your <span>warmest, most qualified lead.</span> Treat the settlement as a celebration."
-      </div>
     </div>
-  </div>
 </section>
 
 <section class="section bg-off" id="s3">
-  <div class="section-inner">
-    <span class="eyebrow reveal">Pattern 02</span>
-    <div class="pattern-card reveal">
-      <div class="pattern-header">
-        <div>
-            <span class="tag-problem">⚠ Clarity Gap</span>
-            <h2 class="pattern-title" style="font-family: 'DM Serif Display'; font-size: 36px;">Basita Transparency</h2>
+    <div class="section-inner">
+        <div class="pattern-card reveal">
+            <div class="pattern-header">
+                <div><span class="tag-problem">⚠ Clarity Gap</span><h2 class="h-section">Basita Transparency</h2></div>
+                <div style="font-family:'DM Serif Display'; font-size:80px; color:var(--green); opacity:0.1;">02</div>
+            </div>
+            <div class="pattern-body">
+                <div class="pattern-col">
+                    <div class="col-label">Customer Voice</div>
+                    <div class="quote-ui"><p>"طلع إن كل ما استخدم رصيد بسيطة المتاح لي يصير لي أقساط زيادة وتتراكم.. الموظف ما وضح لي."</p><span>App Review</span></div>
+                </div>
+                <div class="pattern-col">
+                    <div class="col-label">The Problem</div>
+                    <p>"Billing Shock" causes app deletion. Customers lack visibility into their new cumulative monthly total before committing.</p>
+                </div>
+                <div class="pattern-col">
+                    <div class="col-label">The Fix</div>
+                    <div class="sol-item"><div class="sol-ball">1</div><div class="sol-info"><strong>Impact Dash</strong><p>In-app preview of new monthly total <em>before</em> confirming credit utilization.</p></div></div>
+                    <div class="sol-item"><div class="sol-ball">2</div><div class="sol-info"><strong>Real-time Signal</strong><p>Instant CRM push notification confirming the new consolidated plan details.</p></div></div>
+                </div>
+            </div>
         </div>
-        <div class="pattern-num">02</div>
-      </div>
-      <div class="pattern-body">
-        <div class="pattern-col">
-          <div class="col-label">Customer Voice</div>
-          <div class="quote-ui">
-              <p>"طلع إن كل ما استخدم رصيد بسيطة المتاح لي يصير لي أقساط زيادة وتتراكم.. موظف بسيطة ما وضح لي أبداً والتطبيق ما يعطيني المجموع."</p>
-              <span>App Store User Review</span>
-          </div>
-        </div>
-        <div class="pattern-col">
-          <div class="col-label">The Root Problem</div>
-          <p class="sol-info-block">
-            A severe lack of real-time financial transparency is causing "Billing Shock." The CRM and backend systems know exactly what the new cumulative installment amount will be, but the customer only discovers it months later when the deduction hits. This destroys trust and leads to immediate app deletion.
-          </p>
-        </div>
-        <div class="pattern-col">
-          <div class="col-label">The CRM Fix</div>
-          <div class="sol-item">
-              <div class="sol-ball">1</div>
-              <div class="sol-info">
-                  <strong>Predictive Impact Dashboard</strong>
-                  <p>Implement an in-app visual calculator that previews the exact new monthly total <em>before</em> the customer hits confirm on utilizing their available credit.</p>
-              </div>
-          </div>
-          <div class="sol-item">
-              <div class="sol-ball">2</div>
-              <div class="sol-info">
-                  <strong>Real-time Ledger Signals</strong>
-                  <p>Trigger an instant, unavoidable CRM push notification upon usage: "Success. Please note your new consolidated monthly plan is now X for the next Y months."</p>
-              </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section class="section bg-white" id="s4">
-  <div class="section-inner">
-    <span class="eyebrow reveal">Pattern 03</span>
-    <div class="pattern-card reveal">
-      <div class="pattern-header">
-        <div>
-            <span class="tag-problem" style="background:#FFF3E0; color:var(--accent-orange);">⚠ Reputation Risk</span>
-            <h2 class="pattern-title" style="font-family: 'DM Serif Display'; font-size: 36px;">Loyalty-Informed Collections</h2>
+    <div class="section-inner">
+        <div class="pattern-card reveal">
+            <div class="pattern-header">
+                <div><span class="tag-problem" style="color:var(--accent-orange); background:#FFF3E0;">⚠ Reputation Risk</span><h2 class="h-section">Loyalty-Informed Collections</h2></div>
+                <div style="font-family:'DM Serif Display'; font-size:80px; color:var(--green); opacity:0.1;">03</div>
+            </div>
+            <div class="pattern-body">
+                <div class="pattern-col">
+                    <div class="col-label">Customer Voice</div>
+                    <div class="quote-ui"><p>"صار لي ظرف تأخرت أسبوع، صار جوالي كله رسائل تهديد برفع سمة.. عميلكم من سنوات وما قدرتوا العشرة."</p><span>Google Feedback</span></div>
+                </div>
+                <div class="pattern-col">
+                    <div class="col-label">The Problem</div>
+                    <p>Uniform collection scripts destroy brand equity for long-term loyalists. High-value customers are treated like high-risk defaulters.</p>
+                </div>
+                <div class="pattern-col">
+                    <div class="col-label">The Fix</div>
+                    <div class="sol-item"><div class="sol-ball">★</div><div class="sol-info"><strong>Segmentation</strong><p>CRM routes loyalists to a "Support-First" script rather than a standard demand.</p></div></div>
+                    <div class="sol-item"><div class="sol-ball">✔</div><div class="sol-info"><strong>Brand Guard</strong><p>Tone control based on tenure and historical payment score.</p></div></div>
+                </div>
+            </div>
         </div>
-        <div class="pattern-num">03</div>
-      </div>
-      <div class="pattern-body">
-        <div class="pattern-col">
-          <div class="col-label">Customer Voice</div>
-          <div class="quote-ui">
-              <p>"عميلكم من سنوات، صار لي ظرف تأخرت أسبوع واحد، صار جوالي كله رسائل تهديد برفع سمة وإيقاف خدمات.. نصيحة لا تأخذون منهم، ما يقدرون العشرة."</p>
-              <span>Google Maps Feedback</span>
-          </div>
-        </div>
-        <div class="pattern-col">
-          <div class="col-label">The Root Problem</div>
-          <p class="sol-info-block">
-            Aggressive, standardized collection scripts are currently being applied to all customer segments equally. A highly profitable, loyal 2-year customer experiencing a first-time delay is being spoken to with the exact same tone as a high-risk chronic defaulter, permanently destroying brand equity.
-          </p>
-        </div>
-        <div class="pattern-col">
-          <div class="col-label">The CRM Fix</div>
-          <div class="sol-item">
-              <div class="sol-ball">★</div>
-              <div class="sol-info">
-                  <strong>Behavioral Segmentation</strong>
-                  <p>Configure the CRM to identify high-tier loyalists and actively route them to a specialized "Support-First" message sequence rather than a standard demand.</p>
-              </div>
-          </div>
-          <div class="sol-item">
-              <div class="sol-ball">✔</div>
-              <div class="sol-info">
-                  <strong>Automated Brand Guardrails</strong>
-                  <p>Implement strict tone-control parameters for outbound SMS and dialer scripts based dynamically on the customer's tenure and historical payment score.</p>
-              </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section class="section bg-dark" id="s5">
-  <div class="section-inner reveal">
-    <span class="eyebrow">The Competitive Advantage</span>
-    <h2 class="h-display" style="font-size: clamp(40px, 6vw, 72px);">The <em>eXtra</em> Moat.</h2>
-    <p style="color: #999; font-size: 20px; max-width: 700px; line-height: 1.6; margin-bottom: 20px;">
-        Most financial institutions have to pay heavily to acquire a customer. Tasheel is uniquely positioned to dominate the market by fully integrating the CRM with the eXtra retail footprint.
-    </p>
-
-    <div class="moat-grid">
-        <div class="moat-card">
-            <h4 style="color: var(--green); font-size: 22px; margin-bottom: 18px; font-family: 'DM Serif Display';">Zero CAC Acquisition</h4>
-            <p style="color: #ccc; font-size: 16px; line-height: 1.8;">
-                Customer Acquisition Cost (CAC) is the biggest drain on profitability. By leveraging eXtra's massive daily footfall, we can feed Tasheel's CRM with high-intent data before the financing conversation even begins. We know what they want to buy before they know how they will pay for it.
-            </p>
-        </div>
-        <div class="moat-card">
-            <h4 style="color: var(--green); font-size: 22px; margin-bottom: 18px; font-family: 'DM Serif Display';">The Retention Flywheel</h4>
-            <p style="color: #ccc; font-size: 16px; line-height: 1.8;">
-                Loyalty points earned through on-time Tasheel repayments should be designed for redemption exclusively back at eXtra. This creates a psychological and financial "lock-in" effect—a continuous flywheel where financing guarantees retail sales, and retail rewards guarantee financing compliance.
-            </p>
+    <div class="section-inner reveal">
+        <span class="eyebrow">The Competitive Advantage</span>
+        <h2 class="h-display">The <em>eXtra</em> Moat.</h2>
+        <div class="moat-grid">
+            <div class="moat-card">
+                <h4 style="color:var(--green); font-size:24px; margin-bottom:15px;">Zero CAC Acquisition</h4>
+                <p style="color:#ccc; line-height:1.7;">Leveraging eXtra’s footfall to feed Tasheel’s CRM with high-intent data before financing begins.</p>
+            </div>
+            <div class="moat-card">
+                <h4 style="color:var(--green); font-size:24px; margin-bottom:15px;">Retention Flywheel</h4>
+                <p style="color:#ccc; line-height:1.7;">Repayment points redeemed exclusively at eXtra create a psychological and financial "lock-in" effect.</p>
+            </div>
         </div>
     </div>
-  </div>
 </section>
 
-<section class="section bg-dark" id="s6" style="padding-top: 40px;">
-  <div class="section-inner">
-    <span class="eyebrow reveal">Execution Plan</span>
-    <h2 class="h-section reveal" style="color:#fff;">The 90-Day Roadmap</h2>
-    <p class="reveal" style="color:#888; font-size: 18px; margin-bottom:40px;">Moving from theory to measurable operational impact.</p>
-    
-    <div class="roadmap-grid">
-        <div class="roadmap-card reveal delay-1">
-            <h3 style="color:#fff;">Phase 1: <span style="color:var(--green);">Audit</span></h3>
-            <p style="color:#888; font-size:13px; margin-bottom:28px; font-weight: 700; letter-spacing: 1px;">DAYS 00 - 30</p>
-            <div class="roadmap-step"><span>01</span><p>Map existing backend API triggers to identify the lag between final payments and SIMAH automation.</p></div>
-            <div class="roadmap-step"><span>02</span><p>Segment the entire customer base by 'Tenure vs. Risk Profile' to prepare for targeted collections.</p></div>
-            <div class="roadmap-step"><span>03</span><p>Conduct a thorough linguistic audit of all current CRM automated email and SMS notification templates.</p></div>
-            <div class="kpi-tag">TARGET: Identify 100% of 'Frozen' accounts</div>
-        </div>
-        
-        <div class="roadmap-card reveal delay-2" style="border: 1px solid var(--green); box-shadow: 0 0 30px rgba(91, 158, 58, 0.1);">
-            <h3 style="color:#fff;">Phase 2: <span style="color:var(--green);">Automate</span></h3>
-            <p style="color:#888; font-size:13px; margin-bottom:28px; font-weight: 700; letter-spacing: 1px;">DAYS 31 - 60</p>
-            <div class="roadmap-step"><span>01</span><p>Design and launch the 'Instant Settlement' journey, pushing Digital Certificates and SMS instantly.</p></div>
-            <div class="roadmap-step"><span>02</span><p>Deploy real-time Basita utilization alerts via CRM push notifications to prevent billing shock.</p></div>
-            <div class="roadmap-step"><span>03</span><p>Execute A/B testing on "Support-First" collection scripts specifically targeted at the Gold Loyalty Tier.</p></div>
-            <div class="kpi-tag" style="background:var(--green-dark);">TARGET: Reduce Billing Complaints by 15%</div>
-        </div>
-        
-        <div class="roadmap-card reveal delay-3">
-            <h3 style="color:#fff;">Phase 3: <span style="color:var(--green);">Scale</span></h3>
-            <p style="color:#888; font-size:13px; margin-bottom:28px; font-weight: 700; letter-spacing: 1px;">DAYS 61 - 90</p>
-            <div class="roadmap-step"><span>01</span><p>Formally integrate the eXtra loyalty redemption loop allowing direct Points-to-Cash conversion.</p></div>
-            <div class="roadmap-step"><span>02</span><p>Automate Next-Best-Offer (NBO) algorithms based on the customer's historical purchase frequency.</p></div>
-            <div class="roadmap-step"><span>03</span><p>Rollout the complete, multi-tiered Loyalty Program complete with clearly differentiated financial benefits.</p></div>
-            <div class="kpi-tag">TARGET: Increase Repeat Purchase Rate by 10%</div>
+<section class="section bg-dark" id="s6">
+    <div class="section-inner">
+        <span class="eyebrow reveal">Execution Plan</span>
+        <h2 class="h-section" style="color:#fff;">90-Day Roadmap</h2>
+        <div class="roadmap-grid">
+            <div class="roadmap-card reveal">
+                <h3>Phase 1: Audit</h3>
+                <p style="color:#888; font-size:12px; margin-bottom:20px;">DAYS 00 - 30</p>
+                <div class="roadmap-step"><span>01</span><p>Map API triggers for settlement and SIMAH automation.</p></div>
+                <div class="roadmap-step"><span>02</span><p>Segment customer base by 'Tenure vs. Risk'.</p></div>
+                <div class="kpi-tag">TARGET: Identify 100% of 'Frozen' accounts</div>
+            </div>
+            <div class="roadmap-card reveal delay-1" style="border-color:var(--green);">
+                <h3>Phase 2: Automate</h3>
+                <p style="color:#888; font-size:12px; margin-bottom:20px;">DAYS 31 - 60</p>
+                <div class="roadmap-step"><span>01</span><p>Launch 'Instant Settlement' journey (Digital Cert).</p></div>
+                <div class="roadmap-step"><span>02</span><p>Deploy Basita real-time push notifications.</p></div>
+                <div class="kpi-tag" style="background:var(--green-dark);">TARGET: -15% Billing Complaints</div>
+            </div>
+            <div class="roadmap-card reveal delay-2">
+                <h3>Phase 3: Scale</h3>
+                <p style="color:#888; font-size:12px; margin-bottom:20px;">DAYS 61 - 90</p>
+                <div class="roadmap-step"><span>01</span><p>Integrate eXtra loyalty redemption loop.</p></div>
+                <div class="roadmap-step"><span>02</span><p>Automate Next-Best-Offer (NBO) algorithms.</p></div>
+                <div class="kpi-tag">TARGET: +10% Repeat Purchase Rate</div>
+            </div>
         </div>
     </div>
-  </div>
 </section>
 
 <section class="section bg-off" id="s7">
-  <div class="section-inner reveal">
-    <span class="eyebrow">The Dashboard</span>
-    <h2 class="h-section">Projected Success Metrics</h2>
-    <p style="color: #666; font-size: 18px; margin-bottom: 20px;">The anticipated impact of executing the 90-day roadmap on the core business.</p>
-    
-    <div class="dashboard-grid">
-        <div class="metric-card">
-            <span class="metric-value">+12%</span>
-            <p class="metric-label">Retention Rate</p>
-            <p style="font-size: 13px; color: #999; margin-top: 10px;">Driven by the Instant Settlement & NBO strategy.</p>
-        </div>
-        <div class="metric-card">
-            <span class="metric-value">-20%</span>
-            <p class="metric-label">Churn Post-Collections</p>
-            <p style="font-size: 13px; color: #999; margin-top: 10px;">Driven by behavioral segmentation guardrails.</p>
-        </div>
-        <div class="metric-card">
-            <span class="metric-value">24h</span>
-            <p class="metric-label">Avg. Settlement Closure</p>
-            <p style="font-size: 13px; color: #999; margin-top: 10px;">Down from the current multi-month backlog.</p>
+    <div class="section-inner reveal">
+        <span class="eyebrow">Impact</span>
+        <h2 class="h-section">Success Metrics</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:24px; margin-top:50px;">
+            <div class="metric-card"><span style="font-size:42px; color:var(--green); font-family:'DM Serif Display';">+12%</span><p style="color:#888; text-transform:uppercase; font-size:12px; margin-top:10px;">Retention Rate</p></div>
+            <div class="metric-card"><span style="font-size:42px; color:var(--green); font-family:'DM Serif Display';">-20%</span><p style="color:#888; text-transform:uppercase; font-size:12px; margin-top:10px;">Churn Post-Collections</p></div>
+            <div class="metric-card"><span style="font-size:42px; color:var(--green); font-family:'DM Serif Display';">24h</span><p style="color:#888; text-transform:uppercase; font-size:12px; margin-top:10px;">Avg. Settlement Closure</p></div>
         </div>
     </div>
-  </div>
 </section>
 
-<section class="section bg-white" id="s8" style="text-align:center; padding-bottom: 80px;">
-  <div class="section-inner reveal">
-    <h2 class="h-display" style="font-size: clamp(36px, 5vw, 60px);">Let's build the moat <em>together.</em></h2>
-    <p style="color:#555; font-size: 20px; margin-bottom:50px;">Ready to begin the Phase 1 operational audit tomorrow.</p>
-    
-    <div style="border-top:1px solid #E0E0E0; padding-top:50px; display:inline-block; min-width: 300px;">
-        <p style="color:var(--dark); font-size: 22px; margin-bottom: 8px;"><strong>Sultan Alqahtani</strong></p>
-        <p style="color:var(--green); font-size:14px; letter-spacing:3px; font-weight:700; text-transform: uppercase;">CCXP® · CXAD · CRM & Loyalty Manager Candidate</p>
+<section class="section bg-white" id="s8" style="text-align:center;">
+    <div class="section-inner reveal">
+        <h2 class="h-display" style="font-size:48px;">Let's build the moat <em>together.</em></h2>
+        <div style="border-top:1px solid #eee; padding-top:40px; display:inline-block; min-width:300px;">
+            <p><strong>Sultan Alqahtani</strong></p>
+            <p style="color:var(--green); font-size:12px; letter-spacing:2px; font-weight:700; text-transform:uppercase;">CCXP® · CRM & Loyalty Specialist Candidate</p>
+        </div>
     </div>
-  </div>
 </section>
 
 <script>
-/* =========================================
-   INTERACTION SCRIPT
-   ========================================= */
-document.addEventListener("DOMContentLoaded", function() {
-    const reveals = document.querySelectorAll('.reveal');
-    const sections = document.querySelectorAll('section');
-    const sideNav = document.getElementById('sideNav');
-    const progressBar = document.getElementById('progress');
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll('.reveal');
+        const sections = document.querySelectorAll('section');
+        const sideNav = document.getElementById('sideNav');
+        const progressBar = document.getElementById('progress');
 
-    // Generate Side Navigation Dots
-    sections.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.classList.add('side-dot');
-        if(i === 0) dot.classList.add('active');
-        
-        dot.addEventListener('click', () => {
-            sections[i].scrollIntoView({ behavior: 'smooth' });
+        sections.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('side-dot');
+            if(i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => sections[i].scrollIntoView({ behavior: 'smooth' }));
+            sideNav.appendChild(dot);
         });
-        sideNav.appendChild(dot);
-    });
 
-    const dots = document.querySelectorAll('.side-dot');
-
-    // Intersection Observer for Reveal Animations & Nav Highlight
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add active class to trigger animation
-                entry.target.classList.add('active');
-                
-                // Highlight current nav dot
-                const currentSection = entry.target.closest('section');
-                if (currentSection) {
-                    const sectionIndex = Array.from(sections).indexOf(currentSection);
-                    if (sectionIndex !== -1) {
-                        dots.forEach((d, idx) => {
-                            d.classList.toggle('active', idx === sectionIndex);
-                        });
-                    }
+        const dots = document.querySelectorAll('.side-dot');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    const idx = Array.from(sections).indexOf(entry.target);
+                    if (idx !== -1) dots.forEach((d, i) => d.classList.toggle('active', i === idx));
                 }
-            }
+            });
+        }, { threshold: 0.15 });
+
+        sections.forEach(s => observer.observe(s));
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY, height = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (scroll / height * 100) + '%';
         });
-    }, observerOptions);
-
-    reveals.forEach(el => observer.observe(el));
-
-    // Scroll Progress Bar Update
-    window.addEventListener('scroll', () => {
-        const scrollPx = window.scrollY || document.documentElement.scrollTop;
-        const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (scrollPx / winHeightPx) * 100;
-        progressBar.style.width = scrolled + '%';
-        
-        // Dark mode adapter for nav dots
-        const currentScrollSection = Math.round((scrollPx + (window.innerHeight / 2)) / window.innerHeight);
-        if(sections[currentScrollSection] && sections[currentScrollSection].classList.contains('bg-dark')) {
-            sideNav.classList.add('dark-mode');
-        } else {
-            sideNav.classList.remove('dark-mode');
-        }
     });
-});
 </script>
 </body>
 </html>
+
